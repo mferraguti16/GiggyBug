@@ -1,0 +1,131 @@
+/*** GLOBAL STYLE ***/
+body {
+  background-color: #050101; 
+  margin: 0; /* pas de marge par défault, c'est le fond */
+}
+
+
+/*** ELEMENTS CONTAINERS ***/
+/* logo */
+.logo-container {
+  text-align: center;
+  margin-top: 25px;
+}
+
+/* all h1 titles -- primary+reverb */
+.text-container {
+  display: inline-flex; /* différence entre flex et inline-flex? */
+  align-items: center;
+}
+
+/* animation container */
+.animation-container {
+  display: inline-flex; /* flex ou inline-flex? */
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* pour occuper un bon 1/4 de l'écran */
+  width: 70vw;  /* pour occuper un bon 1/4 de l'écran */
+  overflow: hidden; /* doc (l.51)*/
+}
+
+.sidebar-container {
+  position: fixed; /* encarts fixes en bas à gauche ou flex ou inline-flex*/ /* position ou display */
+  bottom: 25px; /* margin depuis le bas de la page */
+  left: 25px; /* margin depuis le côté gauche de la page */
+  display: flex; /* alignement horizontal encarts */
+  flex-direction: row; /* encarts empilés horizontalement */
+  gap: 25px; /* Espace entre les encarts */
+}
+
+
+/*** ELEMENTS STYLES ***/
+/* text to the left */
+.primary-text {
+  font-size: 3em;
+  font-style: italic; 
+  font-weight: 100;
+  color: rgba(221, 217, 217, 0.772);
+  margin-right: 5px;
+  animation: fadeIn 2s forwards; /* , shimmer-primary-text 3s infinite alternate; */
+  font-family: 'Luminari', fantasy; /* style un peu fantasy */
+}
+
+/* text to the right */
+.reverb-text {
+  font-size: 3em;
+  font-style: italic;
+  font-weight: 100;
+  color: rgba(221, 217, 217, 0.432);
+  margin-left: 5px;
+  transform: scaleX(-1);
+  opacity: 0.5;
+  animation: fadeIn 2s forwards; /* , shimmer-reverb-text 3s infinite alternate; */
+  font-family: 'Luminari', fantasy; /* style beaucoup plus neutre en italique */
+}
+
+.logo {
+  height: 50px;
+  margin-right: 5px;
+  margin-left: 5px;
+  animation: fadeIn 2s forwards, logo-move 4s forwards;
+}
+
+.animation-box {
+  display: inline-flex; 
+  width: 70vw; /* Prend 1/4 de la largeur de l'écran */
+  height: 70vh; /* Prend 1/4 de la hauteur de l'écran */
+  justify-content: center;
+  background-color: #343333c1; /* Couleur d'arrière-plan */
+  border-radius: 0px; /* Coins arrondis pour l'élément */
+}
+
+.sidebar-item {
+  background-color: #343333c1; /* same background as animation-box */
+  color: #fff; /* couleur texte */
+  width: 7vw; 
+  height: 3vh;
+  font-size: 1em;
+  font-style: bold;
+  font-weight: 100;
+  padding: 10px; /* espacement interne */
+  border-radius: 0px; /* coins carrés */
+  text-align: center; /* centre texte dans l'encart */
+  cursor: pointer; /* curseur pointer au survol pour lancer box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* ombre portée pour les encarts */
+  transition: background-color 0.3s ease; /* transition pour les changements de couleur */
+}
+
+.sidebar-item:hover {
+  background-color: #444; /* Couleur de fond au survol */
+}
+
+
+/* ANIMATIONS */
+/* fondu quand site charge */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* animation logo bug */
+@keyframes logo-move {
+  0% {
+    transform: translateX(0) translateY(0); /* position de départ */
+  }
+  25% {
+    transform: translateX(-10px) translateY(0); /* move 10px à gauche */
+  }
+  50% {
+    transform: translateX(10px) translateY(0); /* move 10px à droite */
+  }
+  75% {
+    transform: translateX(0) translateY(-10px); /* monte 10px */
+  }
+  100% {
+    transform: translateX(0) translateY(0); /* reviens position départ */
+  }
+}
