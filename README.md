@@ -1,133 +1,130 @@
-## Arborescence du projet ##
+### Arborescence du projet ###
 
 GIGGYBUG/
 │
-├── 1 - dist/                    # Dossier pour les fichiers compilés, destinés à être utilisés en prod ou pour le build global.
+├── backend/   
+│   ├── dist-backend/           # Fichiers compilés du backend prêts pour la production.
+│   ├── node_modules/           # Dépendances backend installées via npm.
+│   ├── src/                    # Code source du backend.
+│   │   ├── config/             # Configuration du backend (connexion BDD, variables d'environnement, etc.).
+│   │   ├── controllers/        # Logique pour gérer les requêtes HTTP et les réponses.
+│   │   ├── models/             # Modèles de données (structure et interactions avec la BDD).
+│   │   ├── routes/             # Définition des routes API du backend.
+│   │   ├── .env                # Variables d'environnement (non versionnées, sensibles).
+│   │   ├── app.ts              # Initialisation principale de l'application backend.
+│   │   ├── db.ts               # Gestion des connexions à la base de données.
+│   │   ├── index.ts            # Point d'entrée principal du backend.
+│   ├── package-lock.json       # Fichier pour garantir des installations cohérentes des dépendances.
+│   ├── package.json            # Déclaration des dépendances, scripts et métadonnées backend.
+│   ├── tsconfig.json           # Configuration TypeScript spécifique au backend.
 │
-├── 2 - backend/             
-│   ├── node_modules/            # Dossier des dépendances backend, installé via npm.
-│   ├── src/                     # Dossier source du backend contenant toute la logique du serveur.
-│   │   ├── config/              # Fichiers de configuration pour l'application backend (e.g: connexion à la base de données).
-│   │   ├── controllers/         # Gestion des requêtes HTTP et des réponses dans l'API.
-│   │   ├── models/              # Modèles représentant les données utilisées par l'application (par exemple, pour la base de données).
-│   │   ├── routes/              # Définit les routes HTTP pour l'API backend.
-│   │   ├── .env                 # Fichier de configuration pour les variables d'environnement, telles que les clés d'API ou les informations sensibles.
-│   │   ├── app.ts               # Fichier principal où l'application backend est initialisée.
-│   │   ├── db.ts                # Fichier de gestion de la base de données (connexion, requêtes, etc.).
-│   │   ├── index.ts             # Point d'entrée du backend.
-│   ├── package-lock.json        # Fichier généré automatiquement par npm pour garantir des installations reproductibles des dépendances.
-│   ├── package.json             # Fichier qui contient les dépendances, scripts et informations générales sur l'application backend.
-│   ├── tsconfig.json            # Configuration TypeScript spécifique au backend, définissant les options du compilateur.
+├── frontend/     
+│   ├── dist-frontend/          # Fichiers compilés du frontend prêts pour la production.
+│   ├── node_modules/           # Dépendances frontend installées via npm.
+│   ├── public/                 # Fichiers statiques accessibles par le navigateur (favicon, images, etc.).
+│   ├── src/                    # Code source du frontend.
+│   │   ├── assets/             # Ressources statiques (images, logos, icônes, etc.).
+│   │   │   ├── logo_{0...5}    # Variantes du logo.
+│   │   │   ├── react.svg       # Exemple d'asset spécifique.
+│   │   ├── App.css             # Styles globaux de l'application frontend.
+│   │   ├── App.tsx             # Composant principal de l'application React.
+│   │   ├── index.css           # CSS pour la page d'entrée.
+│   │   ├── main.tsx            # Point d'entrée de l'application React.
+│   │   ├── vite-env.d.ts       # Déclarations de types pour l'environnement Vite.
+│   ├── eslint.config.js        # Configuration d'ESLint pour analyser et corriger le code frontend.
+│   ├── index.html              # Fichier HTML principal du frontend.
+│   ├── package-lock.json       # Fichier pour garantir des installations cohérentes des dépendances.
+│   ├── package.json            # Déclaration des dépendances, scripts et métadonnées frontend.
+│   ├── README.front.md         # Documentation dédiée au frontend.
+│   ├── tailwind.config.js      # Configuration de Tailwind CSS pour personnaliser les styles.
+│   ├── tsconfig-front.app.json # Configuration TypeScript dédiée au frontend.
+│   ├── tsconfig.json           # Configuration TypeScript globale pour le frontend.
+│   ├── tsconfig.node.json      # Configuration TypeScript pour les modules Node.js.
+│   ├── vite.config.ts          # Configuration de Vite (outil de développement frontend).
 │
-├── 3 - frontend/            
-│   ├── node_modules/            # Dossier des dépendances frontend, installé via npm.
-│   ├── public/                  # Dossier pour les fichiers publics accessibles par le navigateur (images, favicon, etc.).
-│   ├── src/                     # Contient le code source du frontend.
-│   │   ├── assets/              # Dossier pour les assets utilisés par l'application (logos, images, etc.).
-│   │   │   ├── logo_{0...5}     # Logo de l'application, avec plusieurs variantes.
-│   │   │   ├── react.svg        # Logo ou image liée à React.
-│   │   ├── App.css              # Fichier CSS global pour l'application frontend.
-│   │   ├── App.tsx              # Composant principal de l'application frontend en React.
-│   │   ├── index.css            # Fichier CSS pour la mise en forme de la page d'entrée.
-│   │   ├── main.tsx             # Point d'entrée de l'application React.
-│   │   ├── vite-env.d.ts        # Déclarations de types pour Vite (outil de développement frontend).
-│   ├── eslint.config.js         # Configuration d'ESLint pour le linting du code frontend.
-│   ├── index.html               # Fichier HTML principal pour l'application frontend.
-│   ├── package-lock.json        # Fichier généré automatiquement par npm pour garantir des installations reproductibles des dépendances frontend.
-│   ├── package.json             # Fichier contenant les dépendances, scripts et informations générales sur l'application frontend.
-│   ├── README.front.md          # Documentation spécifique au frontend.
-│   ├── tailwind.config.js       # Configuration de Tailwind CSS pour personnaliser les styles frontend.
-│   ├── tsconfig.app.json        # Configuration TypeScript pour le code frontend.
-│   ├── tsconfig.json            # Fichier de configuration TypeScript pour le projet complet.
-│   ├── tsconfig.node.json       # Configuration TypeScript pour les fichiers Node.js.
-│   ├── vite.config.js           # Configuration de Vite, l'outil de bundling pour le frontend.
-│   ├── node_modules             # Un autre dossier node_modules qui contient les dépendances liées au frontend.
-│   │   ├── .bin                 # Scripts binaires associés aux dépendances frontend.
-│   │   ├── @types               # Types TypeScript pour les dépendances utilisées (par exemple, React).
-│   │   ├── csstype              # Types associés à CSS-in-JS ou à des propriétés CSS.
-│   │   ├── typescript           # Dossier contenant le package TypeScript et ses dépendances.
-│   │   ├── .package-lock.json   # Fichier généré pour le contrôle des versions des dépendances.
-├── .gitignore                   # Fichier listant les fichiers et dossiers à ignorer par Git (ex. : node_modules).
-├── index.js                     # Point d'entrée global du projet, probablement pour configurer l'application.
-├── index.ts                     # Point d'entrée TypeScript (alternative à index.js).
-├── jsconfig.json                # Configuration pour JavaScript dans l'éditeur, probablement utilisé pour gérer les chemins d'importation.
-├── package-lock.json            # Fichier généré automatiquement par npm pour garantir une installation cohérente des dépendances.
-├── package.json                 # Fichier contenant les dépendances, les scripts et d'autres informations essentielles sur le projet.
-└── README.md                    # Documentation générale du projet, expliquant son but et comment l'utiliser.
+├── .gitignore                  # Liste des fichiers/dossiers à ignorer par Git.
+├── index.js                    # (Optionnel) Point d'entrée global du projet en JavaScript.
+├── index.ts                    # (Optionnel) Point d'entrée global du projet en TypeScript.
+├── jsconfig.json               # Configuration des chemins et types JavaScript (si nécessaire).
+├── package-lock.json           # Fichier pour des installations cohérentes de dépendances globales.
+├── package.json                # Déclaration des dépendances, scripts et métadonnées globales.
+└── README.md                   # Documentation générale du projet.
 
-## Dépendances ##
+### **Dépendances clés** ###
 
-npm install dotenv 
-  : pour pouvoir read les var d'env. du .env
+## Backend ##
 
-  dans mon file app.ts : 
-  import dotenv from 'dotenv';
-    je call mon module dotenv
-  dotenv.config(); 
-    for charging les ver. d'env.
+1. **dotenv** : Charger les variables d'environnement depuis le fichier `.env`.
+  
+  Exemple d'utilisation (dans app.ts) :
 
-npm install -D typescript ts-node @types/node
+    import dotenv from 'dotenv';
+    dotenv.config();
 
-  typescript : 
-    Compile le code TypeScript
+  Installation :
 
-  : ts-node : 
-    permet d'exécuter directement du TypeScript sans avoir à le compiler manuellement.
-      Quand tu écris un fichier TypeScript (.ts), normalement, tu dois :
-      Compiler ce fichier avec tsc (TypeScript Compiler) pour le convertir en JavaScript.
-      Exécuter le fichier JavaScript résultant avec node.
+    npm install dotenv
 
-  @types/node : 
-    fournit les définitions de types pour Node.js.
-      ce code TypeScript sans installer @types/node :
-      console.log(process.env.NODE.ENV);
-        err: Cannot find name 'process'
+2. **TypeScript** : Compile le code TypeScript en JavaScript.
 
-## TS SETUP ##
-sudo npm i -g typescript (don't do tsc here)
+  npm install -D typescript
 
-# tsc -v
-check version 
+  **ts-node** : Permet d'exécuter directement du TypeScript sans avoir besoin de le compiler manuellement.
 
-# create your index.ts
-touch index.ts
+  npm install -D ts-node
 
+  **@types/node** : Fournit des types pour Node.js afin d'améliorer l'expérience de développement.
 
-## VUE SETUP ##
-npm install -g @vue/cli
+  npm install -D @types/node
 
-# Create a project #
-vue create my-project
+## ESLint ##
 
-# Project setup #
-npm install
+  npm install eslint 
 
-# Compiles for development #
-npm run serve
+  **@typescript-eslint/parser** : Installer le parser TypeScript
+    
+     Un parser est un outil qui transforme le code source TypeScript et le convertit en une structure que l'outil de linting (ESLint) peut comprendre et analyser.
 
-# Compiles and minifies (optimize) for production #
-npm run build
+  **@typescript-eslint/eslint-plugin** : Installer
+
+  **eslint-plugin-react** : Installer
+
+  **eslint-plugin-react-hooks**
+
+  **--save-dev**
+ 
+**initialize the eslint file**
+
+ npx eslint --init
+
+**launch ESLint on my project** : npx eslint . (or repo-to-check/)
+    will check all files of the current repository
 
 ## Lints and fixes files ##
-npm run lint
 
-# INSTALL ESLint #
-npm install eslint eslint-plugin-vue --save-dev
+  npm run lint
+
+
+## Compiles for development ##
+
+  npm run serve
+
+
+# Compiles and minifies (optimize) for production #
+
+  npm run build
+
+
+
+
 # Analyse code pour détecter erreurs de style, de syntaxe et éventuellement les corriger automatiquement #
 
 # Customize configuration #
-See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## App.vue ##
-kind of html but optimize for vue
-## assets#
-logo.png
 # to change for a beetle of my own drawings #
 styles.css
 # move css elements from App.vue to his own file (style.css) for a better lisibility #
-# call the file in my App.vue #
 
-App.vue => logic and structure of my component
 styles.css => styles of my component
 
 Doc du projet:
