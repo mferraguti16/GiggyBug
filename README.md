@@ -85,3 +85,8 @@ GIGGYBUG/
   npm run serve
 # Compiles and minifies (optimize) for production #
   npm run build
+
+## Documentation ##
+**https://www.typescriptlang.org/docs/**
+**https://nodejs.org/docs/latest/api/**
+**https://developer.mozilla.org/fr/search?q=.find&page=2**
