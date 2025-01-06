@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken'; // cookie-based client-side session
 import bcrypt from 'bcrypt'; // algo de cryptage (hash + sel)
 import { Request, Response } from 'express'; // async need
-import db from 'config/db.ts'; // Module pour gérer la connexion à PostgreSQL
+import db from '../config/db.js'; // Module pour gérer la connexion à PostgreSQL
 
 /* Créer un utilisateur */
 export async function createUser(email: string, password: string) {
