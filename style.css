@@ -1,78 +1,147 @@
-/* Base reset */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #111;
-  color: #eee;
+  margin: 0;
+  padding: 0;
   font-family: 'VT323', monospace;
-  font-size: 20px;
-  line-height: 1.6;
-  padding: 2rem;
+  background: linear-gradient(135deg, #0b3d0b, #000000 85%);
+  color: #a8d08d;
+  min-height: 100vh;
   position: relative;
-  z-index: 1;
+  overflow-x: hidden;
 }
 
-h1, h2, h3 {
-  color: #ff3b3b;
-  text-shadow: 1px 1px 0 #000;
-}
-
-a {
-  color: #ff6b6b;
-  text-decoration: none;
-  border-bottom: 1px dashed #ff6b6b;
-}
-
-a:hover {
-  background-color: #222;
+/* grungy effect to try */
+.noise {
+  pointer-events: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.15;
+  z-index: 9999;
+  mix-blend-mode: multiply;
 }
 
 header {
-  margin-bottom: 3rem;
   text-align: center;
+  padding: 2rem 1rem 1rem 1rem;
+  text-shadow: 1px 1px 5px #000;
+}
+
+header h1 {
+  font-size: 3.5rem;
+  letter-spacing: 4px;
+  margin: 0;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #888;
-  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  color: #7cd577;
+  margin-top: 0.3rem;
+  text-shadow: 0 0 3px #144214;
 }
 
 section {
-  margin-bottom: 3rem;
-  border-left: 4px solid #333;
-  padding-left: 1rem;
+  max-width: 850px;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 2rem auto;
+  padding: 1.8rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #1a3d1a88;
+  backdrop-filter: blur(3px);
+  border: 1px solid #144214;
 }
 
+h2 {
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 4px #000000cc;
+  margin-top: 0;
+  color: #9aff99;
+  border-bottom: 2px solid #4b8f4b;
+  padding-bottom: 0.3rem;
+}
+
+/* config à changer? à voir */
 .project {
-  background: #1a1a1a;
+  margin-top: 1.5rem;
   padding: 1rem;
-  margin-top: 1rem;
-  border: 1px solid #333;
+  background: #0f290f;
+  border-left: 4px solid #4b8f4b;
+  box-shadow: inset 0 0 10px #166916;
+  border-radius: 4px;
+}
+
+/* projects titles */
+.project h3 {
+  margin: 0 0 0.3rem 0;
+  color: #adebad;
+  letter-spacing: 1px;
+}
+
+/* project presentation */
+.project p {
+  margin: 0;
+  color: #b3e6b3;
+}
+
+/* group project part */
+.group-project {
+  border-left-color: #7cd577;
+  background: #144214;
+  box-shadow: inset 0 0 15px #7cd577aa;
+}
+
+/* links */
+a {
+  color: #9aff99;
+  text-decoration: none;
+  border-bottom: 1px dotted #9aff99;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+/* focus */
+a:hover, a:focus {
+  color: #7cd577;
+  border-bottom-color: #7cd577;
+  outline: none; /* can cause issue on the focus, to check */
+}
+
+/* group project part */
+.contact p {
+  font-size: 1.1rem;
 }
 
 footer {
   text-align: center;
-  font-size: 0.8rem;
-  color: #555;
-  margin-top: 2rem;
-  border-top: 1px dashed #333;
-  padding-top: 1rem;
+  padding: 1rem 0 2rem 0;
+  color: #447744;
+  font-size: 0.9rem;
+  letter-spacing: 1.2px;
+  text-shadow: 0 0 2px #000;
 }
 
-/* Texture effect */
-.noise {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
-  opacity: 0.05;
-  z-index: 0;
-  pointer-events: none;
+/* separation */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #4b8f4b, transparent);
+  margin: 3rem auto;
+  max-width: 800px;
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+  section {
+    margin: 1rem;
+    padding: 1.2rem 1rem;
+  }
 }
