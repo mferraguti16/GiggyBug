@@ -1,0 +1,78 @@
+/* Base reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  color: #eee;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  line-height: 1.6;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  color: #ff3b3b;
+  text-shadow: 1px 1px 0 #000;
+}
+
+a {
+  color: #ff6b6b;
+  text-decoration: none;
+  border-bottom: 1px dashed #ff6b6b;
+}
+
+a:hover {
+  background-color: #222;
+}
+
+header {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #888;
+  margin-top: 0.5rem;
+}
+
+section {
+  margin-bottom: 3rem;
+  border-left: 4px solid #333;
+  padding-left: 1rem;
+}
+
+.project {
+  background: #1a1a1a;
+  padding: 1rem;
+  margin-top: 1rem;
+  border: 1px solid #333;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 2rem;
+  border-top: 1px dashed #333;
+  padding-top: 1rem;
+}
+
+/* Texture effect */
+.noise {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-mosaic.png');
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
