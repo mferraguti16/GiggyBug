@@ -196,3 +196,22 @@ hr {
   color: #b3e6b3;
   margin-top: 0.5rem;
 }
+
+/* game feline frenzy button */
+.play-button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  background: #4b8f4b;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #4b8f4b99;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.play-button:hover {
+  background: #7cd577;
+  transform: scale(1.05);
+}
