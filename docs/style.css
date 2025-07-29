@@ -131,7 +131,7 @@ hr {
   height: 1px;
   background: linear-gradient(to right, transparent, #4b8f4b, transparent);
   margin: 3rem auto;
-  max-width: 800px;
+  max-width: 200px;
 }
 
 /* responsive */
