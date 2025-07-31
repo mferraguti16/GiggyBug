@@ -46,7 +46,7 @@ header h1 {
 }
 
 section {
-  max-width: 850px;
+  max-width: 500px;
   background: rgba(0, 0, 0, 0.6);
   margin: 2rem auto;
   padding: 1.8rem 2rem;
