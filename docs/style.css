@@ -155,8 +155,10 @@ hr {
 
 /* Sprite Orga */
 .sprite-gallery {
-  width: 100px;
-  max-width: none;
+  width: 100%;
+  max-width: 1200px; 
+  margin: 2rem auto;
+  padding: 2rem;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   box-shadow: 0 0 20px #1a3d1a88;
