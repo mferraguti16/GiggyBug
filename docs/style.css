@@ -5,8 +5,8 @@
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin: 10px;
+  padding: 10px;
   font-family: 'VT323', monospace;
   background: linear-gradient(135deg, #0b3d0b, #000000 85%);
   color: #a8d08d;
@@ -18,7 +18,7 @@ body {
 /* grungy effect to try */
 .noise {
   pointer-events: none;
-  position: fixed;
+  position: relative;
   top: 0; left: 0; right: 0; bottom: 0;
   background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
   opacity: 0.15;
